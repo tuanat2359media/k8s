@@ -20,6 +20,6 @@ microk8s helm3 repo add fluxcd https://charts.fluxcd.io
 microk8s kubectl apply -f https://raw.githubusercontent.com/fluxcd/helm-operator/master/deploy/crds.yaml
 microk8s kubectl create ns flux
 microk8s helm3 upgrade -i flux fluxcd/flux --set git.url='git@github.com:tuanat2359media/k8s' --namespace flux
-kubectl -n flux logs deployment/flux | grep identity.pub | cut -d '"' -f2
+microk8s kubectl -n flux logs deployment/flux | grep identity.pub | cut -d '"' -f2
 microk8s helm3 upgrade -i helm-operator fluxcd/helm-operator --set git.ssh.secretName=flux-git-deploy --set helm.versions=v3 --namespace flux
 ```
