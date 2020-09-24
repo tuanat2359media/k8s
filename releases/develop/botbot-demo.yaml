@@ -12,7 +12,7 @@ spec:
   chart:
     git: git@github.com:tuanat2359media/k8s
     ref: master
-    path: charts/xregex-cloud
+    path: charts/k8s-demo
   values:
     replicas:
       worker: 1
